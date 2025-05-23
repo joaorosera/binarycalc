@@ -74,7 +74,7 @@ Você deve ver uma saída indicando que todos os testes passaram.
 
 ```
 .
-├── calculadora_binaria.py   # Código principal da calculadora
+├── calculadora.py   # Código principal da calculadora
 ├── test_calculadora.py      # Testes unitários completos
 ├── README.md                # Este arquivo
 └── LICENSE                  # Licença MIT
