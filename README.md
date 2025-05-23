@@ -74,5 +74,5 @@ Os testes unitários cobrem:
 
 ---
 
-**Autor:** Seu Nome  
+**Autor:** João Vitor Rosera e Vinicius Werner
 **Data:** Maio 2025
