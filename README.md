@@ -1,46 +1,105 @@
 # Calculadora Binária 8 bits
 
-![Build Status](https://img.shields.io/badge/build-passing-brightgreen)
-![Python Version](https://img.shields.io/badge/python-3.6%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+[![Python](https://img.shields.io/badge/python-3.6%2B-blue)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/tests-passing-brightgreen)]()
 
-## Descrição
+## 📌 Sobre
 
-Calculadora binária que suporta números de 8 bits com sinal (complemento de dois), realizando operações de soma, subtração e multiplicação.
+Este projeto é uma **calculadora binária** que opera com números de 1 byte (8 bits), suportando números positivos e negativos no formato de complemento de dois.  
+Ela realiza as operações básicas:
 
-## Requisitos
+- Soma (`+`)
+- Subtração (`-`)
+- Multiplicação (`x`)
+
+## ⚙️ Funcionalidades
+
+- Entrada e saída em formato binário (strings de 8 bits, ex: `"00000001"`)
+- Suporte a números negativos (usando complemento de dois)
+- Detecção e tratamento de overflow em operações
+- Validação rigorosa de entradas (tamanho, caracteres, operação)
+- Exceções claras em caso de erros (`overflow`, `valor invalido`, `tamanho da entrada invalido`)
+- Código todo em Python sem conversão direta para decimal nas operações (opera bit a bit)
+
+## 🛠️ Como usar
+
+### Requisitos
 
 - Python 3.6 ou superior
 
-## Como usar
+### Executando a calculadora interativa
 
-Execute o arquivo `calculadora.py` para usar a calculadora via terminal:
+1. Clone ou baixe o projeto
+2. No terminal, navegue até a pasta do projeto
+3. Execute:
 
 ```bash
-python3 calculadora.py
+python3 calculadora_binaria.py
 ```
 
-Digite os números binários (8 bits, com sinal) e a operação desejada (+, -, x).
+4. Siga as instruções na tela para digitar dois números binários de 8 bits e a operação desejada.
+5. Digite `sair` para encerrar o programa.
 
-## Função principal
+---
 
-A função principal `calcular(n1, n2, operacao)` recebe:
+### Usando a função `calcular` diretamente
 
-- `n1` e `n2`: strings binárias de 8 bits (ex: "00000001")
-- `operacao`: string, podendo ser "+", "-" ou "x"
+No seu código Python, importe e utilize a função:
 
-Retorna a string binária de 8 bits resultado.
+```python
+from calculadora_binaria import calcular
 
-## Testes
+resultado = calcular("00000011", "00000010", "+")
+print(resultado)  # Saída: "00000101"
+```
 
-Para rodar os testes automatizados com unittest, use:
+---
+
+## 🧪 Testes automatizados
+
+Incluímos um conjunto completo de testes usando o módulo `unittest` para garantir a confiabilidade do código.
+
+Para rodar os testes:
 
 ```bash
 python3 -m unittest test_calculadora.py
 ```
 
-Todos os testes devem passar sem erros.
+Você deve ver uma saída indicando que todos os testes passaram.
 
-## Licença
+---
 
-MIT License - veja o arquivo LICENSE para detalhes.
+## 📁 Estrutura do projeto
+
+```
+.
+├── calculadora_binaria.py   # Código principal da calculadora
+├── test_calculadora.py      # Testes unitários completos
+├── README.md                # Este arquivo
+└── LICENSE                  # Licença MIT
+```
+
+---
+
+## ⚠️ Tratamento de erros
+
+O código levanta exceções específicas para diferentes erros:
+
+| Exceção                  | Quando ocorre                             |
+|--------------------------|-----------------------------------------|
+| `overflow`               | Resultado ultrapassa limite de 8 bits   |
+| `valor invalido`         | Entrada com caracteres inválidos ou operação inválida |
+| `tamanho da entrada invalido` | Entrada com tamanho diferente de 8 bits |
+
+---
+
+## 📜 Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+---
+
+## 👤 Autor
+
+João Vitor Rosera | Vinicius Werner.
